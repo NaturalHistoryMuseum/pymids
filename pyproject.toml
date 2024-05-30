@@ -42,12 +42,10 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools]
 py-modules = ["mids"]
 zip-safe = false
+include-package-data = true
 
 [tool.setuptools.packages.find]
 exclude = ["tests", "docs"]
-
-[tool.setuptools.package-data]
-sssom_data = ['sssom/*']
 
 [tool.black]
 line-length = 88
