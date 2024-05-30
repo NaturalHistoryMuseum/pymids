@@ -46,6 +46,9 @@ zip-safe = false
 [tool.setuptools.packages.find]
 exclude = ["tests", "docs"]
 
+[tool.setuptools.package-data]
+sssom_data = ['sssom/*']
+
 [tool.black]
 line-length = 88
 skip_string_normalization = true
