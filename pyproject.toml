@@ -18,7 +18,6 @@ classifiers = [
 ]
 dependencies = [
     "PyYaml==6.0.1",
-    "httpx==0.27.0",
 ]
 
 [project.optional-dependencies]
