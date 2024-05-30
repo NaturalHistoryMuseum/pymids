@@ -1,0 +1,61 @@
+[project]
+name = "pymids"
+version = "0.0.1"
+description = "A Python library for performing MIDS caculations"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "GPL-3.0-or-later" }
+authors = [
+    { name = "Natural History Museum", email = "data@nhm.ac.uk" }
+]
+keywords = ["MIDS", "TDWG"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12"
+]
+dependencies = [
+    "PyYaml==6.0.1",
+    "httpx==0.27.0",
+]
+
+[project.optional-dependencies]
+cli = [
+    "click==8.1.7",
+]
+test = [
+    "mock",
+    "pytest",
+    "pytest-cov",
+    "coveralls"
+]
+
+[project.urls]
+repository = "https://github.com/NaturalHistoryMuseum/mids-check"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["mids"]
+zip-safe = false
+
+[tool.setuptools.packages.find]
+exclude = ["tests", "docs"]
+
+[tool.black]
+line-length = 88
+skip_string_normalization = true
+
+[tool.pylint]
+max-line-length = 88
+disable = ["C0114", "R0903"]
+
+[tool.docformatter]
+wrap-summaries = 88
+wrap-descriptions = 88
+pre-summary-newline = true
+make-summary-multi-line = true
